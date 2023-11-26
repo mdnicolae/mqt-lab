@@ -1,0 +1,11 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+# config/routes.yaml
+
+char_producer:
+    path: '/api/v1/char'
+    controller: 'App\Controller\CharController::sendChar'
+    methods: ['POST']

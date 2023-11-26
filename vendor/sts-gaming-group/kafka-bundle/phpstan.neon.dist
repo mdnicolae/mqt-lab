@@ -1,0 +1,65 @@
+parameters:
+    bootstrapFiles:
+        - vendor/bin/.phpunit/phpunit/vendor/autoload.php
+    level: max
+    checkMissingIterableValueType: false
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - %currentWorkingDirectory%
+    excludePaths:
+        - vendor/*
+        - var/*
+        - bin/*
+        - config/*
+    ignoreErrors:
+        -
+            message: '/expects Symfony\\Component\\Config\\Definition\\ConfigurationInterface/'
+            path: src/DependencyInjection/StsKafkaExtension.php
+        -
+            message: '/Conf::set\(\) expects string/'
+            path: src/RdKafka/Factory/ConsumerFactory.php
+        -
+            message: '/RdKafka\\Message\|null given/'
+            path: src/Client/Consumer/ConsumerClient.php
+        -
+            message: '/provide\(\) expects string/'
+            path: src/Command/ConsumeCommand.php
+        -
+            message: '/MockObject given/'
+            path: tests
+        -
+            message: '/cast\(\) should return bool/'
+            path: src/Configuration/Traits/BooleanConfigurationTrait.php
+        -
+            message: '/RecordSerializer constructor expects array<string, mixed>/'
+            path: src/Decoder/AvroDecoder.php
+        -
+            message: '/should return array<RdKafka\\ProducerTopic> but returns RdKafka\\ProducerTopic/'
+            path: src/RdKafka/Factory/ProducerBuilder.php
+        -
+            message: '/Cannot access an offset on RdKafka\\ProducerTopic/'
+            path: src/RdKafka/Factory/ProducerBuilder.php
+        -
+            message: '/Else branch is unreachable because ternary operator condition is always true/'
+            path: src/Configuration/ConfigurationResolver.php
+        -
+            message: '/ConsumerProvider::provide\(\) expects string/'
+            path: src/Command/ConsumersDescribeCommand.php
+        -
+            message: '/Variable \$rdKafkaMessage might not be defined/'
+            path: src/Client/Consumer/ConsumerClient.php
+        -
+            message: '/ConsumerProviderTest::\$provider/'
+            path: tests/Functional/Consumer/ConsumerProviderTest.php
+        -
+            message: '/json_decode expects string/'
+            path: tests/Unit/Configuration/ConfigurationResolverTest.php
+        -
+            message: '/assertInstanceOf\(\) expects class-string/'
+            path: tests/Unit/Configuration/ResolvedConfigurationTest.php
+        -
+            message: '/in_array expects array/'
+            path: src/Configuration/Traits/ObjectConfigurationTrait.php
+        -
+            message: '/does not accept object\|null/'
+            path: tests/Functional/Client/Consumer/ConsumerProviderTest.php

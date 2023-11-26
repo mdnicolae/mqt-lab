@@ -1,0 +1,6 @@
+POST {{basePath}}{{apiPath}}/char
+
+{
+"content": "Mihai",
+"key": "Nicolae"
+}

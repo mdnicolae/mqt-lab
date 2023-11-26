@@ -1,0 +1,11 @@
+framework:
+    messenger:
+        transports:
+            kafka: '%env(KAFKA_DSN)%'
+
+        routing:
+            'App\Message\CharKafkaMessage': kafka
+
+        default_bus: messenger.bus.default
+        buses:
+            messenger.bus.default: ~

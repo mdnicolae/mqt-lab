@@ -1,0 +1,8 @@
+{
+ "type": "record",
+ "name": "Char",
+ "fields": [
+     {"name": "content", "type": "string"},
+     {"name": "key", "type": "string"}
+ ]
+}
