@@ -28,7 +28,7 @@ build: ## Builds the Docker images
 up: ## Start the docker hub in detached mode (no logs)
 	@$(DOCKER_COMP) up --detach
 
-start: build up setup-schemas ## Build and start the containers
+start: build up ## Build and start the containers
 
 down: ## Stop the docker hub
 	@$(DOCKER_COMP) down --remove-orphans
@@ -60,13 +60,9 @@ cc: c=c:c ## Clear the cache
 cc: sf
 
 ## —— Project 🚀 ———————————————————————————————————————————————————————————————
-setup-schemas: setup-char-schema ## Setup the schemas
-
-setup-char-schema: ## Setup the char schema
-	@$(SCHEMA_CONT) kafka-avro-console-producer \
-		--broker-list kafka:9092 \
-		--topic char-topic \
-		--property value.schema='{"type":"record","name":"Char","fields":[{"name":"content","type":"string"},{"name":"key","type":"string"}]}'
 
 start-char-consumer:
 	@$(PHP) bin/console kafka:consumers:consume char_consumer
+
+start-json-consumer:
+	@$(PHP) bin/console kafka:consumers:consume json_consumer

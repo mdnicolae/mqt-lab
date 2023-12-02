@@ -143,6 +143,7 @@ class ComposerStaticInit3d7aaf1866df64911154060e3a32f321
         ),
         'E' => 
         array (
+            'Enqueue\\RdKafka\\' => 16,
             'Enqueue\\Null\\' => 13,
             'Enqueue\\Dsn\\' => 12,
             'Enqueue\\Bundle\\' => 15,
@@ -419,6 +420,10 @@ class ComposerStaticInit3d7aaf1866df64911154060e3a32f321
         'FlixTech\\AvroSerializer\\Integrations\\' => 
         array (
             0 => __DIR__ . '/..' . '/flix-tech/avro-serde-php/integrations',
+        ),
+        'Enqueue\\RdKafka\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/rdkafka',
         ),
         'Enqueue\\Null\\' => 
         array (

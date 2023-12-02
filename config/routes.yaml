@@ -9,3 +9,18 @@ char_producer:
     path: '/api/v1/char'
     controller: 'App\Controller\CharController::sendChar'
     methods: ['POST']
+
+json_producer:
+    path: '/api/v1/json'
+    controller: 'App\Controller\JsonController::sendJson'
+    methods: ['POST']
+
+object_producer:
+    path: '/api/v1/object'
+    controller: 'App\Controller\ObjectController::sendObject'
+    methods: ['POST']
+
+double_message:
+    path: '/api/v1/double'
+    controller: 'App\Controller\DoubleMessageController::send'
+    methods: ['POST']

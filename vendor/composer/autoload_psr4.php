@@ -69,6 +69,7 @@ return array(
     'FlixTech\\SchemaRegistryApi\\' => array($vendorDir . '/flix-tech/confluent-schema-registry-api/src'),
     'FlixTech\\AvroSerializer\\Objects\\' => array($vendorDir . '/flix-tech/avro-serde-php/src/Objects'),
     'FlixTech\\AvroSerializer\\Integrations\\' => array($vendorDir . '/flix-tech/avro-serde-php/integrations'),
+    'Enqueue\\RdKafka\\' => array($vendorDir . '/enqueue/rdkafka'),
     'Enqueue\\Null\\' => array($vendorDir . '/enqueue/null'),
     'Enqueue\\Dsn\\' => array($vendorDir . '/enqueue/dsn'),
     'Enqueue\\Bundle\\' => array($vendorDir . '/enqueue/enqueue-bundle'),

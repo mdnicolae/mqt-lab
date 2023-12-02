@@ -3,15 +3,25 @@ sts_gaming_group_kafka:
     instances:
       App\Consumers\CharConsumer:
         brokers: [ 'kafka:19092' ]
-        schema_registry: 'http://localhost:8081'
-        group_id: 'char-consumer'
+        group_id: 'char_consumer'
         topics: [ 'char-topic' ]
-        max_retries: 3 # defaults to 0 which means it is disabled
-        max_retry_delay: 2500 # defaults to 2000 ms
-        retry_delay: 300 # defaults to 200 ms
-        retry_multiplier: 3 # defaults to 2
+        register_missing_schemas: true
+        register_missing_subjects: true
+      App\Consumers\JsonConsumer:
+        brokers: [ 'kafka:19092' ]
+        group_id: 'json_consumer'
+        topics: [ 'json-topic' ]
+        register_missing_schemas: true
+        register_missing_subjects: true
+
   producers:
     instances:
       App\Producers\CharProducer:
         brokers: [ 'kafka:19092' ]
         producer_topic: 'char-topic'
+      App\Producers\JsonProducer:
+        brokers: [ 'kafka:19092' ]
+        producer_topic: 'json-topic'
+      App\Producers\ObjectProducer:
+        brokers: [ 'kafka:19092' ]
+        producer_topic: 'object-topic'
